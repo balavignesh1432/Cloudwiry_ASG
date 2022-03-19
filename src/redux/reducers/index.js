@@ -5,14 +5,14 @@ const expand = (state = false, action) => {
     }
 }
 
-const savings = (state = {key:'Monthly Savings', value:'$69,042.30', icon:'Dollar'}, action) =>{
+const savings = (state = {}, action) =>{
     switch(action.type){
         case 'Set_Savings' : return action.payload
         default : return state
     }
 }
 
-const recommendations = (state = {key:'Recommendations', value:'312', icon:'Star'}, action) =>{
+const recommendations = (state = {}, action) =>{
     switch(action.type){
         case 'Set_Recommendations' : return action.payload
         default : return state
