@@ -6,21 +6,23 @@ import Typography from '@mui/material/Typography';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 
-import '../styles/style.css'
+import { useStyles } from '../styles';
 
 function TopSection(){
 
     const expand = useSelector((state)=>state.expand)
     const dispatch = useDispatch()
 
+    const classes = useStyles()
+
     function handleExpand(){
         dispatch({type:'Toggle'})
     }
 
     return (
-        <div className='top'>
+        <div className={classes.top}>
             <IconButton onClick={handleExpand}>
-            {expand ? <RemoveCircleOutlineIcon style={{color:'black'}} />:<AddCircleOutlineIcon style={{color:'black'}} /> }
+                {expand ? <RemoveCircleOutlineIcon className='toggleIcon' />:<AddCircleOutlineIcon className='toggleIcon' /> }
             </IconButton>
             <div className='topTextSection'>
                 <Typography className='topText' variant='h6' fontFamily='Poppins' fontWeight='bold' >Auto Scaling Group</Typography>    

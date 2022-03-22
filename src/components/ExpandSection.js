@@ -4,9 +4,11 @@ import Insights from './Insights';
 
 import { Button, Divider } from '@mui/material';
 
-import '../styles/style.css'
+import { useStyles } from '../styles';
 
 function ExpandSection(){
+
+    const classes = useStyles()
 
     const savings = useSelector((state)=>state.savings)
     const recommendations = useSelector((state)=>state.recommendations)
@@ -23,7 +25,7 @@ function ExpandSection(){
     }
 
     return (
-            <div className='expandSection'>
+            <div className={classes.expandSection}>
                 <div className='insightSection'>
                     <Insights title={savings.key} subtitle={savings.value} icon={savings.icon} />
                     <Divider className='verticalDivider' orientation='vertical' flexItem />

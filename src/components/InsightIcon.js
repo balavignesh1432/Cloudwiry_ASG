@@ -1,14 +1,16 @@
 import MonetizationOnSharpIcon from '@mui/icons-material/MonetizationOnSharp'
 import StarsRoundedIcon from '@mui/icons-material/StarsRounded'
-import PendingIcon from '@mui/icons-material/Pending'
 
-import '../styles/style.css'
+import {useStyles} from '../styles/index.js'
 
 function InsightIcon(props){
+
+    const classes = useStyles();
+
     switch(props.icon){
-        case "Dollar": return <MonetizationOnSharpIcon className='insightIcon' fontSize='large'/> 
-        case "Star": return <StarsRoundedIcon className='insightIcon' fontSize='large'/> 
-        default: return <PendingIcon color='success' fontSize='large' />
+        case "Dollar": return <MonetizationOnSharpIcon className={classes.insightIcon} fontSize='large'/> 
+        case "Star": return <StarsRoundedIcon className={classes.insightIcon} fontSize='large'/> 
+        default: return null
     }
 }
 
